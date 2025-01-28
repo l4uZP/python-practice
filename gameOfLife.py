@@ -1,7 +1,7 @@
 import random
 
-WIDTH = 20
-HEIGH = 20
+WIDTH = 10
+HEIGH = 10
 
 
 def createMap():
@@ -17,5 +17,10 @@ def createMap():
     return rows
 
 
+def printCurrentMap():
+    for row in randMap:
+        print(row)
+
+
 randMap = createMap()
-print(randMap)
+printCurrentMap()
