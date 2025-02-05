@@ -1,4 +1,6 @@
 import random
+import os
+import time
 
 WIDTH = 10
 HEIGH = 10
@@ -18,9 +20,27 @@ def createMap():
 
 
 def printCurrentMap():
+    os.system("clear")
     for row in randMap:
         print(row)
 
 
+def toggleLife(cell):
+    if cell == "#":
+        return " "
+    else:
+        return "#"
+
+
+def nextStep():
+    time.sleep(1)
+    for x in range(len(randMap)):
+        for y in range(len(randMap[x])):    
+            randMap[x][y] = toggleLife(randMap[x][y])
+
+
+
 randMap = createMap()
-printCurrentMap()
+while True:
+    printCurrentMap()
+    nextStep()
