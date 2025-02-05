@@ -2,8 +2,8 @@ import random
 import os
 import time
 
-WIDTH = 10
-HEIGH = 10
+WIDTH = 3
+HEIGH = 3
 
 
 def createMap():
@@ -35,12 +35,39 @@ def toggleLife(cell):
 def nextStep():
     time.sleep(1)
     for x in range(len(randMap)):
-        for y in range(len(randMap[x])):    
+        for y in range(len(randMap[x])):
             randMap[x][y] = toggleLife(randMap[x][y])
 
 
 
+def countLivingNeighbors(x, y):
+    ln = 0
+    if randMap[x-1][y-1] == "#":
+        ln+=1
+    if randMap[x-1][y] == "#":
+        ln+=1
+    if randMap[x-1][y+1] == "#":
+        ln+=1
+    if randMap[x][y-1] == "#":
+        ln+=1
+    if randMap[x][y+1] == "#":
+        ln+=1
+    if randMap[x+1][y-1] == "#":
+        ln+=1
+    if randMap[x+1][y] == "#":
+        ln+=1
+    if randMap[x+1][y+1] == "#":
+        ln+=1
+
+    return ln
+
+
 randMap = createMap()
-while True:
-    printCurrentMap()
-    nextStep()
+
+printCurrentMap()
+print(countLivingNeighbors(1,1))
+
+# while True:
+#     printCurrentMap()
+#     nextStep()
+
