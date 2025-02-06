@@ -21,7 +21,7 @@ def createMap():
 
 
 def printCurrentMap():
-    os.system("clear")
+    os.system("clear") #This will only work on linux.
     for row in randMap:
         print(row)
 
@@ -48,9 +48,10 @@ def nextStep():
 def countLivingNeighbors(x, y):
     ln = 0
 
-    cell = y+1    
-    if cell >= WIDTH:
-        cell = 0
+    #maybe I should find a better or cleaner way to handle this
+    col = y+1    
+    if col >= WIDTH:
+        col = 0
     row = x+1
     if row >= HEIGH:
         row = 0
@@ -59,17 +60,17 @@ def countLivingNeighbors(x, y):
         ln+=1
     if randMap[x-1][y] == "#":
         ln+=1
-    if randMap[x-1][cell] == "#":
+    if randMap[x-1][col] == "#":
         ln+=1
     if randMap[x][y-1] == "#":
         ln+=1
-    if randMap[x][cell] == "#":
+    if randMap[x][col] == "#":
         ln+=1
     if randMap[row][y-1] == "#":
         ln+=1
     if randMap[row][y] == "#":
         ln+=1
-    if randMap[row][cell] == "#":
+    if randMap[row][col] == "#":
         ln+=1
 
     return ln
