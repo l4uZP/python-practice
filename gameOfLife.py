@@ -4,7 +4,7 @@ import time
 import sys
 
 WIDTH = 20
-HEIGH = 20
+HEIGH = 15
 
 
 def createMap():
@@ -50,10 +50,10 @@ def countLivingNeighbors(x, y):
 
     #maybe I should find a better or cleaner way to handle this
     col = y+1    
-    if col >= WIDTH:
+    if col >= HEIGH:
         col = 0
     row = x+1
-    if row >= HEIGH:
+    if row >= WIDTH:
         row = 0
 
     if randMap[x-1][y-1] == "#":
