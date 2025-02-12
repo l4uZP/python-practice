@@ -24,9 +24,17 @@ def CountTsAndHs(flips):
             h +=1
     return t, h
 
+def CalculatePercentage(flipTimes, streaks):
+    percentage = streaks / flipTimes
+    return percentage
+
+def PrintReadablePercentage(percentage):
+    res = percentage * 100
+    return str(res) + "%"
+
 def main():
     flips = GetSixRandomFlips()
     print("Flips: " + str(flips))
 
 
-main()
+# main()
