@@ -82,7 +82,7 @@ def main():
     TestGetSixRandomFlipsItReturnsOnlyTsAndHsArray()
     TestCalculatePercentageWorksWithBasicExample()
     TestCalculatePercentageWorksWithAnotherBasicExample()
-    TestPrintReadablePercentageWorksWithSomeBasicExamples()
+    TestReadablePercentageWorksWithSomeBasicExamples()
     TestIsAStreakReturnsTrueWhenSixConsecutiveFlipsAreTheSame()
     TestIsAStreakReturnsFalseWhenSixConsecutiveFlipsAreNotTheSame()
 
