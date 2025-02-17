@@ -28,13 +28,23 @@ def CalculatePercentage(flipTimes, streaks):
     percentage = streaks / flipTimes
     return percentage
 
-def PrintReadablePercentage(percentage):
+def ReadablePercentage(percentage):
     res = percentage * 100
     return str(res) + "%"
 
+def IsAStreak(flips):
+    h, s = CountTsAndHs(flips)
+    return len(flips) == h or len(flips) == s
+
 def main():
-    flips = GetSixRandomFlips()
-    print("Flips: " + str(flips))
+    flipTimes = 10000
+    streaks = 0
+    for t in range(flipTimes):
+        flips = GetSixRandomFlips()
+        if IsAStreak(flips):
+            streaks += 1
 
+    p = CalculatePercentage(flipTimes, streaks)
+    print(ReadablePercentage(p))
 
-# main()
+main()
