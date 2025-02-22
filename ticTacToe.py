@@ -30,10 +30,10 @@ def isAvailable(move):
     if move not in board.keys():
         return False
     
-    if board[move] == " ":
-        return True
-    else:
+    if board[move] != " ":
         return False
+    
+    return True
     
 def computerPlaying():
     print("\nComputer turn")
